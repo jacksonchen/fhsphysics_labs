@@ -1,0 +1,181 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[top=80pt,bottom=80pt,left=60pt,right=60pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{gensymb}
+\usepackage{titling}
+\usepackage{graphicx}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage[section]{placeins}
+\usepackage[utf8]{inputenc}
+
+\pgfplotsset{compat=1.11}
+
+\begin{document}
+
+\title{Lab 2: Real Pulley}
+\subtitle {IB Physics II Period 6, Petach}
+\date{12 September 2015}
+\author{Jackson Chen}
+\maketitle
+
+\section{Goal}
+
+To understand the concepts of rotational mechanics and dynamics.
+
+\section{Data}
+
+\subsection{Part 1}
+
+\begin{table}[htp]
+\centering
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
+\hline \textbf{Mass of Pulley (g)} & \textbf{Radius of Pulley (cm)} \\ \hline
+200 & 7.00 \\ \hline
+\end{tabularx}
+\caption{Data on the Pulley used in all of the trials of Part 1}
+
+\bigskip
+
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
+\hline \textbf{Trial} & \textbf{Time (s)} & \textbf{Distance (cm)} & \textbf{Linear Accel. ($\frac{m}{s^2}$)} \\ \hline
+1 & 1.41 & 72.20 & 0.726 \\ \hline
+2 & 1.58 & 72.12 & 0.578 \\ \hline
+3 & 1.40 & 72.25 & 0.737 \\ \hline
+4 & 1.46 & 72.31 & 0.678 \\ \hline
+5 & 1.53 & 72.00 & 0.615 \\ \hline
+\end{tabularx}
+\caption{Five trials for a 5.71 g falling mass in Part 1}
+
+\bigskip
+
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
+\hline \textbf{Trial} & \textbf{Time (s)} & \textbf{Distance (cm)} & \textbf{Linear Accel. ($\frac{m}{s^2}$)} \\ \hline
+1 & 1.01 & 71.20 & 1.40 \\ \hline
+2 & 1.06 & 71.20 & 1.27 \\ \hline
+\end{tabularx}
+\caption{Two trials for a 11.02 g falling mass in Part 1}
+
+\bigskip
+
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
+\hline \textbf{Trial} & \textbf{Time (s)} & \textbf{Distance (cm)} & \textbf{Linear Accel. ($\frac{m}{s^2}$)} \\ \hline
+1 & 0.85 & 71.25 & 1.97 \\ \hline
+2 & 0.80 & 71.20 & 2.26 \\ \hline
+\end{tabularx}
+\caption{Two trials for a 16.50 g falling mass in Part 1}
+\end{table}
+
+\clearpage
+\subsection{Part 2}
+
+\begin{table}[htp]
+\centering
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X }
+\hline \textbf{Radius of Pulley (cm)} \\ \hline
+2.40 \\ \hline
+\end{tabularx}
+\caption{Data on the Pulley used in all of the trials of Part 2}
+
+\bigskip
+
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
+\hline \textbf{Trial} & \textbf{Time (s)} & \textbf{Distance (cm)} & \textbf{\alpha ($\frac{rad}{s^2}$)} & \textbf{a ($\frac{m}{s^2}$)} \\ \hline
+1 & 1.00 & 80.39 & 53.23 & 1.61 \\ \hline
+2 & 1.00 & 78.93 & 49.74 & 1.58 \\ \hline
+3 & 1.00 & 79.90 & 50.62 & 1.60 \\ \hline
+4 & 1.00 & 80.21 & 53.23 & 1.60 \\ \hline
+5 & 0.95 & 80.15 & 51.49 & 1.78 \\ \hline
+\end{tabularx}
+\caption{Five trials for a falling mass in Part 2}
+\end{table}
+
+\section{Analysis}
+\subsection{Part 1}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{Lab2_drawing.png}
+\caption{Free Body Diagram of apparatus setup in Part 1}
+\end{figure}
+
+\clearpage
+
+ Conducting the sum of forces and torques based on Figure 1: \\
+    \[ \Sigma F = F_G - F_T = ma \]
+    \[F_T = F_G - ma = m(g-a) \] \\
+    % \[\Sigma \tau = I \alpha = F_{T}R = mR(g-a) \]
+    % \[mR(g-a) = \frac{1}{2}MR^{2} \alpha \]
+    % \[\alpha = \frac{2mR(g-a)}{MR^2} = \frac{2m(g-a)}{MR} \] \\
+
+\begin{enumerate}
+  \item Given that $\alpha = \frac{a}{r}$
+      We will use the data from Table 1 and Table 2 where $m = 5.71$g to calculate $\alpha $. To find $a$, we will average the five $a$ values in Table 2: \\[3]
+      \[ a = \frac{0.726 + 0.578 + 0.737 + 0.678 + 0.615}{5} = 0.667 \frac{m}{s^2} \]
+      \[\alpha = \frac{0.667}{0.07} = \boxed{9.53 \frac{rad}{s^2}} \]
+      % \[\alpha = \frac{2*0.0571(9.8 - 0.667)}{0.2*0.07} = \boxed{ 74.5 \frac{rad}{s^2} } \] \\
+
+      The $\alpha $ value for $m = 11.02$g is calculated in the same way: \\[3]
+      \[ a = \frac{1.40 + 1.27}{2} = 1.34 \frac{m}{s^2} \]
+      \[\alpha = \frac{1.34}{0.07} = \boxed{19.1 \frac{rad}{s^2}} \]
+      % \[\alpha = \frac{2*0.1102(9.8-1.34)}{0.2*0.07} = \boxed{ 133 \frac{rad}{s^2} } \] \\
+
+      The $\alpha $ value for $m = 16.50$g is calculated in the same way: \\[3]
+      \[ a = \frac{1.97 + 2.26}{2} = 2.12 \frac{m}{s^2} \]
+      \[\alpha = \frac{2.12}{0.07} = \boxed{30.3 \frac{rad}{s^2}} \]
+      % \[\alpha = \frac{2*0.1650(9.8-2.12)}{0.2*0.07} = \boxed{ 181 \frac{rad}{s^2} } \]
+  \item From above, it was found that $F_T = m(g-a)$. We can plug the values from the different masses and accelerations into this equation to find $F_T$: \\
+    For $m = 5.71$g:
+      \[ F_T = 0.0571(9.8 - 0.667) = \boxed{0.521 N} \]
+    For $m = 11.02$g:
+      \[ F_T = 0.1102(9.8 - 1.34) = \boxed{0.932 N} \]
+    For $m = 16.50$g:
+      \[ F_T = 0.165(9.8 - 2.12) =  \boxed{1.27 N} \]
+  \item Using Newton's second law for torques, we can find $I_{expt}$:
+    \[ I_{expt} = \frac{F_{T}R}{\alpha } = \frac{mR(g-a)}{\alpha } \] \\
+    For $m = 5.71$g:
+      \[ I_{expt} = \frac{0.0571*0.07(9.8 - 0.667)}{9.53} = 3.8 * 10^{-3} \] \\
+    For $m = 11.02$g:
+      \[ I_{expt} = \frac{0.1102*0.07(9.8 - 1.34)}{19.1} = 3.4 * 10^{-3}\] \\
+    For $m = 16.50$g:
+      \[ I_{expt} = \frac{0.1650*0.07(9.8 - 2.12)}{30.3} = 2.9 * 10^{-3} \] \\
+    Averaging the $I_{expt}$ values from the three masses, the $I_{expt}$ of the pulley is \boxed{3.4 * 10^{-3} kg*m^2}
+  \item From the data in Table 1:
+      \[I_{calc} = 0.5*0.200*(0.07)^2 = \boxed{4.9 * 10^{-4} kg*m^2} \]
+  \item Frictional torque was not taken into consideration.
+  \item The frictional torque is $F_{fr}R$, and it can be calculated from the following equation:
+    \[ \tau _{fr} = I_{calc}\alpha - F_{T}R \] \\
+    For $m = 5.71$g:
+      \[ \tau _{fr} = 4.9*10^{-4}*9.53 - 0.521*0.07 = \boxed{-0.032 N*m} \]
+    For $m = 11.02$g:
+      \[ \tau _{fr} = 4.9*10^{-4}*19.1 - 0.932*0.07 = \boxed{-0.056 N*m} \]
+    For $m = 16.50$g:
+      \[ \tau _{fr} = 4.9*10^{-4}*30.3 - 1.27*0.07 = \boxed{-0.074 N*m} \]
+  \item Sources of error in calculating frictional torque may have included imprecise measurements. For example, when measuring the time
+        it took for the mass to fall a certain distance, the exact start and stop times on the stopwatch may not have corresponded with the
+        actual times. In addition, when measuring the distance that the mass fell, the measurement device we were using (a meter stick) may
+        not have been perfectly perpendicular to the surface we were measuring on.
+\end{enumerate}
+
+\subsection{Part 2}
+We can find $\alpha $ from the equation $\alpha = \frac{a}{r}$. Therefore we need to first average the $a$ values:
+\[ a = \frac{1.61 + 1.58 + 1.60 + 1.60 + 1.78}{5} = 1.634 \]
+\[ \alpha _{calc} = \frac{a}{r} = \frac{1.634}{.0240} = 68.1 \frac{rad}{s^2} \] \\
+
+The average measured $\alpha $ value from the RoMo sensor was $51.67 \frac{rad}{s^2}$ \\
+
+The percent error is:
+\[ \frac{|68.1 - 51.67|}{51.67}*100 = \boxed{31.8 \%} \]
+
+\end{document}
