@@ -1,6 +1,7 @@
 # Physics II Labs
 Labs:
- - Real Pulley
+ - Airplane Lab
+ - Real Pulley Lab
 
 # Licenses
 

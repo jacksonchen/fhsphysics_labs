@@ -1,0 +1,106 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[top=80pt,bottom=80pt,left=60pt,right=60pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{gensymb}
+\usepackage{titling}
+\usepackage{graphicx}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage[section]{placeins}
+\usepackage[utf8]{inputenc}
+
+\pgfplotsset{compat=1.11}
+
+\begin{document}
+
+\title{Lab 1: Airplane Lab}
+\subtitle {IB Physics II Period 6, Petach}
+\date{19 September 2015}
+\author{Jackson Chen}
+\maketitle
+
+\section{Design}
+
+\subsection{Research Question}
+What is the relationship between the period and the height for the circular motion of an airplane moving in a circle?
+
+\subsection{Variables}
+The independent variable is the length of the string that the airplane is attached to. The dependent variables are the
+period and height of the circular motion that the airplane makes. The controlled variables include the mass of the airplane,
+material of the string, the timer, the laser, and the properties of the surrounding environment.
+
+\subsection{Apparatus}
+\begin{itemize}
+  \item Hook
+  \item Model airplane
+  \item String
+  \item Stopwatch (on a phone)
+  \item Meter stick
+  \item Laser
+  \item Ring stand with clamp
+\end{itemize}
+
+\subsection{Procedure}
+\begin{enumerate}
+  \item Attach the model airplane to a 100cm string and connect it to a hook attached to the ceiling. Then turn the airplane on.
+  \item Clamp a laser onto a ring stand and make the laser parallel to the surface that the ring stand is on.
+  \item Raise or lower the laser (without changing its angle) so its light hits the moving airplane anywhere in its circular orbit.
+  \item Measure the height of the airplane with respect to the ceiling by measuring the placement of the laser with respect to the ceiling with a meter stick.
+  \item Use the timer to measure the amount of seconds it takes the airplane to complete three revolutions.
+  \item Repeat steps 4-5 five times for five different trials.
+  \item Repeat the experiment (for one trial) for strings of lengths: 90cm, 80cm, 70cm, and 60cm.
+\end{enumerate}
+
+\subsection{Diagram}
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{Lab1_drawing.png}
+\caption{Free Body Diagram of apparatus setup}
+\end{figure}
+
+\section{Data}
+
+\subsection{Data Collection}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
+\hline \textbf{String length (cm)} & \textbf{Trial} & \textbf{Height (cm)} & \textbf{Time per 3 revs(s)} & \textbf{Period (s)} \\ \hline
+$100 \pm 2$ & 1 &  71.30 & 4.89 & 1.63 \\ \hline
+$100 \pm 2$ & 2 &  70.11 & 4.90 & 1.63 \\ \hline
+$100 \pm 2$ & 3 &  69.45 & 5.03 & 1.67 \\ \hline
+$100 \pm 2$ & 4 &  67.50 & 5.03 & 1.67 \\ \hline
+$100 \pm 2$ & 5 &  66.98 & 5.01 & 1.67 \\ \hline
+\end{tabularx}
+\caption{Data for a string length of $100 \pm 2$cm. The purpose of five trials was to determine uncertainty.}
+\end{table}
+\begin{table}[htp]
+%\bigskip
+\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
+\hline \textbf{String length (cm)} & \textbf{Height (cm)} & \textbf{Time per 3 revs(s)} & \textbf{Period (s)} \\ \hline
+$90 \pm 2$ & 57.95 & 4.58 & 1.53 \\ \hline
+$80 \pm 2$ & 46.85 & 4.51 & 1.50 \\ \hline
+$70 \pm 2$ & 37.92 & 3.95 & 1.32 \\ \hline
+$60 \pm 2$ & 42.24 & 3.85 & 1.28 \\ \hline
+\end{tabularx}
+\caption{Data for four different string lengths}
+\end{table}
+
+\subsection{Data Processing}
+\subsubsection{Deriving a relationship between period and height}
+
+
+\section{Conclusion}
+
+
+\end{document}
