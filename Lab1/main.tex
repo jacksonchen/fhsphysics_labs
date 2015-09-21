@@ -179,43 +179,45 @@ T = 2\pi \sqrt{\frac{h}{g}}
         error bars/.cd,
             y dir=both,
             y explicit,
-    ] table[x=X,y=Y,y error=Y_error] {data.dat};
+            x dir=both,
+            x explicit,
+    ] table[x=X,y=Y,y error=Y_error, x error = X_error] {data.dat};
 \addplot [thick, red] table[
     y={create col/linear regression={y=Y}}
 ] % compute a linear regression from the input table
 {data.dat};
-\addplot [blue, no markers] coordinates {(6.5,1.21) (8.3,1.73)};
-\addplot [green, no markers] coordinates {(6.2,1.39) (8.3,1.59)};
+\addplot [blue, no markers] coordinates {(6.6,1.21) (8.2,1.73)};
+\addplot [green, no markers] coordinates {(6.4,1.35) (8.4,1.59)};
 \addlegendentry{Data}
 \addlegendentry{%
 $ y = \pgfmathprintnumber{\pgfplotstableregressiona} \cdot x
         \pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$}}
-\addlegendentry{$y =  0.29 \cdot x - 0.67$}
-\addlegendentry{$y = 0.10 \cdot x+ 0.80$}
+\addlegendentry{$y =  0.33 \cdot x - 0.94$}
+\addlegendentry{$y = 0.12 \cdot x+ 0.58$}
 \end{axis}
 \end{tikzpicture}
 \caption{Graph of T vs $\sqrt{h}$ with line of best fit, maximum slope, and minimum sloped lines.}
 \end{figure}
 
-The maximum gradient is 0.29 and the minimum gradient is 0.10. The best fit line gradient is 0.17. \\
-The uncertainty above the best fit line is $0.29 - 0.17 = 0.12$ \\
-The uncertainty below the best fit line is $0.17 - 0.10 = -0.07$ \\
-The gradient, including uncertainty is $0.17 \cdot \frac{0.06}{-0.07} = \boxed{0.17 \pm 0.10}$
+The maximum gradient is 0.33 and the minimum gradient is 0.12. The best fit line gradient is 0.17. \\
+The uncertainty above the best fit line is $0.33 - 0.17 = 0.16$ \\
+The uncertainty below the best fit line is $0.17 - 0.12 = -0.05$ \\
+The gradient, including uncertainty is $0.17 \cdot \frac{0.16}{-0.05} = \boxed{0.17 \pm 0.11}$
 
 \section{Conclusion}
 The gradient means that $\sqrt{h}$ increases with T by a proportionality factor of 0.17 $\frac{\sqrt{cm}}{s}$
-with an uncertainty of \pm 0.10.
+with an uncertainty of \pm 0.11.
 
 According to Equation 2, the slope that was predicted by the derived relationship is:
 \[ \frac{T}{\sqrt{h}} = \frac{2\pi }{\sqrt{g}} = 2.0 \frac{\sqrt{m}}{s} = 0.2 \frac{\sqrt{cm}}{s} \]
 
 We can perform a percent error analysis on the slope:
 
-\[ \frac{|0.2 - 0.17 \pm 0.1|}{0.2} \cdot 100 = 15 \pm 9 \% \]
+\[ \frac{|0.2 - 0.17 \pm 0.11|}{0.2} \cdot 100 = 15 \pm 10 \% \]
 
 \subsubsection{Evaluation}
 The relationship between T and $\sqrt{h}$ is relatively justified with the data, due to its small percent error compared with the calculated slope.
-However, errors involved were rather significant since the gradient varies by 59\% ,which is high. A potential source of error includes the changing of
+However, errors involved were rather significant since the gradient varies by 65\% ,which is high. A potential source of error includes the changing of
 the laser in the middle of the experiment, due to the battery running out in our laser in the middle of the experiment. The new laser had a much larger
 beam of light (in terms of area), and thus measuring the height of the laser dot to the roof was incredibly difficult. Furthermore, the laser dot was
 extremely bright and made it difficult to accurately make out the increments in the meter stick. Another source of error came from the timing of the
