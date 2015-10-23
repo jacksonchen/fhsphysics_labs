@@ -33,8 +33,8 @@
     The aim of the experiment is to investigate the relationship between radius and
     angular velocity for the linear motion of a sphere unraveling from a string at a
     fixed height. This will be done by changing the radius of the sphere that is being
-    dropped through the use of various sizes balls that are unraveled from the string
-    and then measuring the linear velocity of the falling ball using a photogate.
+    dropped through the use of various sizes balls. They are then unraveled from the string
+    and fall through a photogate, which measures their linear velocity.
     The purpose of the string is to cause the ball to rotate while falling, due to the
     nature of its unraveling motion.
 
@@ -64,7 +64,7 @@
     \subsection{Apparatus}
     \begin{itemize}
       \item Photogate
-      \item Four different sizes balls that are relatively uniform spheres
+      \item Four different sized balls that are relatively uniform spheres
       \item String
       \item DataWorks software that reads data from the photogate
       \item Ring stand with clamp
@@ -77,7 +77,7 @@
       \item Place a photogate toward the bottom of the ringstand so that the ball will drop through it.
       \item Connect the photogate to the DataWorks software, such that it reads the linear velocity of the falling ball
       \item Measure the height difference between the placement of the clamp and the photogate along the ring stand using a meter stick
-      \item Pick a ball, measure it radius using a meter stick
+      \item Pick a ball, measure its radius using a meter stick
       \item Tie one end of the string to a clamp attached to a ring stand, and the other end around the ball
       \item Carefully wrap the string around the ball until the ball is level with the clamp
       \item Drop the ball so that it falls through the photogate
@@ -231,6 +231,7 @@
                 $0.0140 \pm 0.0005$     &	 $3.26 \pm 0.68$        & $ 230 \pm 50$          & 189.0  \\ \hline
       \end{tabularx}
       \caption{Combined table with the average linear velocities, calculated and theoretical angular velocities}
+      \label{tab:agg}
       \end{table}
 
     \subsection{Analyzing experiment evidence for angular velocity versus radius}
@@ -310,16 +311,58 @@
           \end{axis}
         \end{tikzpicture}
         \caption{Graph of $\omega _{theoret}$ vs radius with line of best fit.}
+        \label{fig:theoret}
       \end{figure}
 
       From Figure \ref{fig:calc}, the steepest, or maximum, slope is -25000 and the minimum -4807.
       The best fit line slope is -14277. \\\\
       The uncertainty above the best fit line is $25000 - 14277 = 10723$. The negative can be disregarded
       because it is unnecessary when calculating uncertainty. \\
-      The uncertainty below the best fit line is $14277 - 4807 = -9470$ \\\\
+      The uncertainty below the best fit line is $4807 - 14277  = -9470$ \\\\
       The slope of the set of data points, including uncertainty is
-      $-14277 \cdot \frac{10723}{-9470} = \boxed{ -14277 \pm 1253}$
+      $-14277 \cdot \frac{10723}{-9470} = \boxed{ -14000 \pm 1000}$
 
   \section{Evaluation}
+    \subsection{Percent Error Analysis}
+    The slope means that an increasing radius decreases the angular velocity by a proportionality factor
+    of $14000 \frac{m \cdot s}{rad}$ with an uncertainty of $\pm 1000$. \\
+
+    According to the slope of the best fit line in Figure \ref{fig:theoret},
+    which is based on $\omega _{theoret}$ values from Table \ref{tab:agg},
+    the true proportionality factor should be 8000. Therefore a percent error analysis
+    can be performed on the slope:
+    \[ \frac{|8000 - 14000 \pm 1000|}{8000} \cdot 100 = 80 \pm 10 \% \]
+
+    \subsection{Conclusion} \label{sec:conclusion}
+
+    The relationship between radius and angular velocity is supported by the data, since the theoretical
+    value for the slope of angular velocity versus radius is between the minimum and maximum
+    values of the experiment. However, the errors involved were rather significant due to the large
+    percent error, 80\% .
+
+    A potential source is error is the shape of the balls that were used in the experiment. Some
+    of the balls used were not completely spherical in shape, and had noticeable edges on the
+    surface. This would have impacted the angular velocity, because the inertia used in the
+    calculation was based on a spherical object. Secondly, the string that the ball unraveled
+    from was uneven in width throughout its length due to the uneven distribution of mass. Some parts of the
+    string also began to be worn out as the experiment continued. This would have affected the ball's path
+    as it unraveled by changing the ball's trajectory and ultimately the height it fell.
+    Finally, another source of error may stem from the software and photogate not measuring the
+    angular velocity at fine enough time intervals. The graphs generated by the software displayed a
+    spike when the ball passed through the photogate's sensors, but the point was very discrete. The lack
+    of continuity makes it difficult to tell where precisely the spike was measured, and if it was
+    measured in the most accurate location possible.
+
+    \subsection{Improvements}
+
+    There are many improvements that could be made to this experiment to fix many of the sources of error
+    identified in Section \ref{sec:conclusion}. Firstly, balls that are visibly uniform should be picked
+    for future experiments. This would mitigate the irregularity in ball shape, which would effect the angular
+    velocity. In addition, a thinner string made out of a different material could be used to minimize
+    uneven widths of the string at different points along its length. Furthermore, this experiment
+    ignored the effects of thermal energy when deriving a relationship between radius and angular velocity,
+    but future experimentation could take frictional force into consideration to provide even
+    more accurate results. Finally, a different photogate could have been used to read data at
+    much shorter intervals, and to ultimately allow for a more continuous time versus velocity graph.
 
 \end{document}
