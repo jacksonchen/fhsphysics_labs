@@ -13,6 +13,8 @@
 \usepackage{tikz}
 \usepackage[section]{placeins}
 \usepackage[utf8]{inputenc}
+\usepackage{pgfplots} % for table
+\usepackage{pgfplotstable} % for linear regression
 \usepackage{csvsimple}
 \usepackage{subfig}
 
@@ -156,6 +158,7 @@
   \section{Analysis}
 
     \subsection{Deriving the relationship between radius and angular velocity} \label{sssec:derivation}
+
       A relationship can be found between radius and angular velocity by using the law of conservation of energy.
       Effects of thermal energy (friction) from the string are negligible.
       \[ GPE = KE_{T} + KE_{R}\]
@@ -167,31 +170,155 @@
       \[ \omega ^2 = \frac{10gh}{7R^2} \]
       \[ \omega = \sqrt{\frac{10gh}{7R^2}} \]
       \begin{equation}
-      \[ \omega = \boxed{ \frac{1}{R} \cdot \sqrt{\frac{10gh}{7}} } \]
+        \boxed{ \omega = \frac{1}{R} \cdot \sqrt{\frac{10gh}{7}} }
       \end{equation}
 
-    \subsection{Calculating angular velocity}
-      Using Equation 1, derived above, the angular velocity can be calculated for each ball size.
-      For radius 2.34 cm:
-      \[ \omega = \frac{1}{0.234} \]
-
     \subsection{Averaging the six trials for each ball size and finding uncertainty}
-      A sample calculation will be done for the set of data around the ball with radius 2.34 cm. \\\\
-      Uncertainty for linear velocity can be calculated by dividing the linear velocity range by 2:
-      \[ \frac{3.10 - 1.81}{2} = 0.65  \]
-      Now to find the average:
-      \[ \frac{1.86 + 1.81 + 3.10 + 2.50 + 2.87 + 2.20}{6} = 2.39 \frac{m}{s} \]
+      Uncertainty for linear velocity can be calculated by dividing the linear velocity range by 2.
+      Calculations for the average linear velocity and uncertainty for the four ball sizes will
+      be shown below: \\
+
+      For ball with radius 2.34 cm:
+      \[ \frac{3.10 - 1.81}{2} = \pm 0.65  \]
+      \[ v = \frac{1.86 + 1.81 + 3.10 + 2.50 + 2.87 + 2.20}{6} = 2.39 \pm 0.65 \frac{m}{s} \]
+
+      For ball with radius 1.90 cm:
+      \[ \frac{2.98 - 2.12}{2} = \pm 0.43  \]
+      \[ v = \frac{2.12 + 2.38 + 2.98 + 2.23 + 2.35 + 2.23}{6} = 2.38 \pm 0.43 \frac{m}{s} \]
+
+      For ball with radius 1.69 cm:
+      \[ \frac{3.91 - 2.22}{2} = \pm 0.85  \]
+      \[ v = \frac{3.32 + 3.18 + 2.22 + 3.91 + 2.85 + 3.63}{6} = 3.19 \pm 0.85 \frac{m}{s} \]
+
+      For ball with radius 1.40 cm:
+      \[ \frac{3.67 - 2.31}{2} = \pm 0.68  \]
+      \[ v = \frac{2.91 + 3.62 + 3.62 + 2.31 + 3.67 + 3.41}{6} = 3.26 \pm 0.68 \frac{m}{s} \]
+
+
+    \subsection{Calculating angular velocity}
+      Using the data from the experiment, the calculated angular velocity can be found from
+      the linear velocity that is measured by the photogate, as shown in Equation 2.
+      \begin{equation}
+        \omega _{calc} = \frac{v}{r}
+      \end{equation}
+      The theoretical angular velocity can be found using Equation 1. Calculations for these
+      two $\omega $ values will be shown below: \\
+
+      For ball with radius 2.34 cm:
+      \[ \omega _{theoret} = \frac{1}{0.0234} \cdot \sqrt{\frac{10*9.8*0.5000}{7}} = 113.1 \frac{rad}{s} \]
+      \[ \omega _{calc} = \frac{2.39 \pm 0.65}{0.0234} = 100 \pm 30 \frac{rad}{s} \]
+
+      For ball with radius 1.90 cm:
+      \[ \omega _{theoret} = \frac{1}{0.0190} \cdot \sqrt{\frac{10*9.8*0.5000}{7}} = 139.3 \frac{rad}{s} \]
+      \[ \omega _{calc} = \frac{2.38 \pm 0.43}{0.0190} = 130 \pm 20 \frac{rad}{s} \]
+
+      For ball with radius 1.69 cm:
+      \[ \omega _{theoret} = \frac{1}{0.0169} \cdot \sqrt{\frac{10*9.8*0.5000}{7}} = 156.6 \frac{rad}{s} \]
+      \[ \omega _{calc} = \frac{3.19 \pm 0.85}{0.0169} = 190 \pm 50 \frac{rad}{s} \]
+
+      For ball with radius 1.40 cm:
+      \[ \omega _{theoret} = \frac{1}{0.0140} \cdot \sqrt{\frac{10*9.8*0.5000}{7}} = 189.0 \frac{rad}{s} \]
+      \[ \omega _{calc} = \frac{3.26 \pm 0.68}{0.0140} = 230 \pm 50 \frac{rad}{s} \]
+
 
       \begin{table}[H]
       \centering
-      \begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
-        \hline \textbf{Radius (cm)} & \textbf{Linear Velocity (m/s)} \\ \hline
-                $2.34 \pm 0.05$     &	 $2.39 \pm 0.65$ \\ \hline
+      \begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X }
+        \hline \textbf{Radius (m)} & \textbf{$v$ (m/s)} & \textbf{ $\omega _{calc}$ (rad/s)} & \textbf{ $\omega _{theoret}$ (rad/s)} \\ \hline
+                $0.0234 \pm 0.0005$     &	 $2.39 \pm 0.65$        & $ 100 \pm 30$          & 113.1  \\ \hline
+                $0.0190 \pm 0.0005$     &	 $2.38 \pm 0.43$        & $ 130 \pm 20$          & 139.3  \\ \hline
+                $0.0169 \pm 0.0005$     &	 $3.19 \pm 0.85$        & $ 190 \pm 50$          & 156.6  \\ \hline
+                $0.0140 \pm 0.0005$     &	 $3.26 \pm 0.68$        & $ 230 \pm 50$          & 189.0  \\ \hline
       \end{tabularx}
-      \caption{Data for six trials with ball radius of 1.40 cm and height of $50.00 \pm 0.05$ cm.}
+      \caption{Combined table with the average linear velocities, calculated and theoretical angular velocities}
       \end{table}
 
-    \subsection{Analyzing experiment evidence for radius vs angular velocity}
+    \subsection{Analyzing experiment evidence for angular velocity versus radius}
+
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \begin{axis}[
+            legend pos=outer north east,
+            title={Calculated Angular Velocity vs Radius for a Ball Dropped From a String},
+            xlabel={Radius (m)},
+            ylabel={Calculated Angular Velocity (rad/s)},
+            xmin = 0.01,
+            xmax = 0.03,
+            ymax = 300,
+            ymin = 50,
+            scale = 1.3
+            ]
+
+            \addplot[scatter, only marks,
+                  error bars/.cd,
+                      y dir=both,
+                      y explicit,
+                      x dir=both,
+                      x explicit,
+              ] table[x=X,y=Y,y error=Y_error, x error = X_error] {data/combined.dat};
+            \addplot [thick, red] table[
+                y={create col/linear regression={y=Y}}
+            ] % compute a linear regression from the input table
+            {data/combined.dat};
+            \addplot [blue, no markers] coordinates {(0.0145,280) (0.0229,70)};
+            \addplot [green, no markers] coordinates {(0.0135,180) (0.0239,130)};
+
+            \addlegendentry{Data}
+            \addlegendentry{%
+            $ y = \pgfmathprintnumber{\pgfplotstableregressiona} \cdot x
+                    \pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$}}
+            \addlegendentry{$y = - 25000 \cdot x + 624.5$}
+            \addlegendentry{$y = - 4807 \cdot x+ 244.9$}
+          \end{axis}
+        \end{tikzpicture}
+        \caption{Graph of $\omega _{calc}$ vs radius with line of best fit, maximum slope, and minimum sloped lines.}
+        \label{fig:calc}
+      \end{figure}
+
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \begin{axis}[
+            legend pos=outer north east,
+            title={Theoretical Angular Velocity vs Radius for a Ball Dropped From a String},
+            xlabel={Radius (m)},
+            ylabel={Theoretical Angular Velocity (rad/s)},
+            xmin = 0.01,
+            xmax = 0.03,
+            ymax = 200,
+            ymin = 100,
+            scale = 1.3
+            ]
+
+            \addplot[scatter, only marks,
+                  error bars/.cd,
+                      y dir=both,
+                      y explicit,
+                      x dir=both,
+                      x explicit,
+              ] table[x=X,y=Y,y error=Y_error, x error = X_error] {data/theoret.dat};
+            \addplot [thick, red] table[
+                y={create col/linear regression={y=Y}}
+            ] % compute a linear regression from the input table
+            {data/theoret.dat};
+
+            \addlegendentry{Data}
+            \addlegendentry{%
+            $ y = \pgfmathprintnumber{\pgfplotstableregressiona} \cdot x
+                    \pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$}}
+          \end{axis}
+        \end{tikzpicture}
+        \caption{Graph of $\omega _{theoret}$ vs radius with line of best fit.}
+      \end{figure}
+
+      From Figure \ref{fig:calc}, the steepest, or maximum, slope is -25000 and the minimum -4807.
+      The best fit line slope is -14277. \\\\
+      The uncertainty above the best fit line is $25000 - 14277 = 10723$. The negative can be disregarded
+      because it is unnecessary when calculating uncertainty. \\
+      The uncertainty below the best fit line is $14277 - 4807 = -9470$ \\\\
+      The slope of the set of data points, including uncertainty is
+      $-14277 \cdot \frac{10723}{-9470} = \boxed{ -14277 \pm 1253}$
 
   \section{Evaluation}
 
